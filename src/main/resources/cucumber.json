@@ -1,0 +1,705 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2025-09-26T05:26:01.123Z",
+        "line": 12,
+        "name": "One Sample first scenario",
+        "description": "",
+        "id": "sample-first-feature-to-test;one-sample-first-scenario",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 5327000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "This step will always pass",
+            "match": {
+              "location": "stepdefinitions.MyStepDefs.thisStepWillAlwaysPass()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "This step will \"pass\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"pass\"",
+                  "offset": 15
+                }
+              ],
+              "location": "stepdefinitions.MyStepDefs.thisStepWill(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "This step will \"pass\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"pass\"",
+                  "offset": 15
+                }
+              ],
+              "location": "stepdefinitions.MyStepDefs.thisStepWill(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "This step will \"pass\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"pass\"",
+                  "offset": 15
+                }
+              ],
+              "location": "stepdefinitions.MyStepDefs.thisStepWill(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@first"
+          },
+          {
+            "name": "@pass"
+          },
+          {
+            "name": "@one"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-09-26T05:26:01.134Z",
+        "line": 19,
+        "name": "One Sample second scenario",
+        "description": "",
+        "id": "sample-first-feature-to-test;one-sample-second-scenario",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "This step will always pass",
+            "match": {
+              "location": "stepdefinitions.MyStepDefs.thisStepWillAlwaysPass()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "This step will \"pass\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"pass\"",
+                  "offset": 15
+                }
+              ],
+              "location": "stepdefinitions.MyStepDefs.thisStepWill(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "This step will \"pass\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"pass\"",
+                  "offset": 15
+                }
+              ],
+              "location": "stepdefinitions.MyStepDefs.thisStepWill(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "This step will \"pass\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"pass\"",
+                  "offset": 15
+                }
+              ],
+              "location": "stepdefinitions.MyStepDefs.thisStepWill(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@first"
+          },
+          {
+            "name": "@pass"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-09-26T05:26:01.137Z",
+        "line": 26,
+        "name": "One Sample third scenario",
+        "description": "",
+        "id": "sample-first-feature-to-test;one-sample-third-scenario",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 636500,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "This step will always pass",
+            "match": {
+              "location": "stepdefinitions.MyStepDefs.thisStepWillAlwaysPass()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "This step will \"pass\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"pass\"",
+                  "offset": 15
+                }
+              ],
+              "location": "stepdefinitions.MyStepDefs.thisStepWill(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: expected [true] but found [false]\r\n\tat org.testng.Assert.fail(Assert.java:111)\r\n\tat org.testng.Assert.failNotEquals(Assert.java:1590)\r\n\tat org.testng.Assert.assertTrue(Assert.java:57)\r\n\tat org.testng.Assert.assertTrue(Assert.java:67)\r\n\tat stepdefinitions.MyStepDefs.thisStepWill(MyStepDefs.java:39)\r\n\tat ✽.This step will \"fail\"(file:///D:/IntelliJ/Automation/Selenium/cucumber-selenium-testng/src/test/resources/features/sample_one.feature:29)\r\n",
+              "status": "failed"
+            },
+            "line": 29,
+            "name": "This step will \"fail\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"fail\"",
+                  "offset": 15
+                }
+              ],
+              "location": "stepdefinitions.MyStepDefs.thisStepWill(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 30,
+            "name": "This step will \"pass\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"pass\"",
+                  "offset": 15
+                }
+              ],
+              "location": "stepdefinitions.MyStepDefs.thisStepWill(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@first"
+          },
+          {
+            "name": "@fail"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-09-26T05:26:01.150Z",
+        "line": 33,
+        "name": "One Sample fourth scenario",
+        "description": "",
+        "id": "sample-first-feature-to-test;one-sample-fourth-scenario",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: expected [false] but found [true]\r\n\tat org.testng.Assert.fail(Assert.java:111)\r\n\tat org.testng.Assert.failNotEquals(Assert.java:1590)\r\n\tat org.testng.Assert.assertFalse(Assert.java:79)\r\n\tat org.testng.Assert.assertFalse(Assert.java:89)\r\n\tat stepdefinitions.MyStepDefs.thisStepWillAlwaysFail(MyStepDefs.java:32)\r\n\tat ✽.This step will always fail(file:///D:/IntelliJ/Automation/Selenium/cucumber-selenium-testng/src/test/resources/features/sample_one.feature:34)\r\n",
+              "duration": 1099600,
+              "status": "failed"
+            },
+            "line": 34,
+            "name": "This step will always fail",
+            "match": {
+              "location": "stepdefinitions.MyStepDefs.thisStepWillAlwaysFail()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 35,
+            "name": "This step will \"fail\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"fail\"",
+                  "offset": 15
+                }
+              ],
+              "location": "stepdefinitions.MyStepDefs.thisStepWill(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 36,
+            "name": "This step will \"fail\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"fail\"",
+                  "offset": 15
+                }
+              ],
+              "location": "stepdefinitions.MyStepDefs.thisStepWill(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 37,
+            "name": "This step will \"fail\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"fail\"",
+                  "offset": 15
+                }
+              ],
+              "location": "stepdefinitions.MyStepDefs.thisStepWill(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@first"
+          },
+          {
+            "name": "@fail"
+          }
+        ]
+      }
+    ],
+    "name": "Sample First Feature to Test",
+    "description": "",
+    "id": "sample-first-feature-to-test",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/sample_one.feature",
+    "tags": [
+      {
+        "name": "@first",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  },
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2025-09-26T05:26:01.154Z",
+        "line": 20,
+        "name": "Two Sample first scenario",
+        "description": "",
+        "id": "sample-second-feature-to-test;two-sample-first-scenario;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "This step will always pass",
+            "match": {
+              "location": "stepdefinitions.MyStepDefs.thisStepWillAlwaysPass()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "This step will \"pass\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"pass\"",
+                  "offset": 15
+                }
+              ],
+              "location": "stepdefinitions.MyStepDefs.thisStepWill(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "This step will \"pass\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"pass\"",
+                  "offset": 15
+                }
+              ],
+              "location": "stepdefinitions.MyStepDefs.thisStepWill(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "This step will \"pass\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"pass\"",
+                  "offset": 15
+                }
+              ],
+              "location": "stepdefinitions.MyStepDefs.thisStepWill(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@second"
+          },
+          {
+            "name": "@pass"
+          },
+          {
+            "name": "@two"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-09-26T05:26:01.154Z",
+        "line": 31,
+        "name": "Two Sample second scenario",
+        "description": "",
+        "id": "sample-second-feature-to-test;two-sample-second-scenario;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "This step will always pass",
+            "match": {
+              "location": "stepdefinitions.MyStepDefs.thisStepWillAlwaysPass()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "This step will \"pass\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"pass\"",
+                  "offset": 15
+                }
+              ],
+              "location": "stepdefinitions.MyStepDefs.thisStepWill(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "This step will \"pass\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"pass\"",
+                  "offset": 15
+                }
+              ],
+              "location": "stepdefinitions.MyStepDefs.thisStepWill(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "This step will \"pass\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"pass\"",
+                  "offset": 15
+                }
+              ],
+              "location": "stepdefinitions.MyStepDefs.thisStepWill(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@second"
+          },
+          {
+            "name": "@pass"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-09-26T05:26:01.158Z",
+        "line": 42,
+        "name": "Two Sample third scenario",
+        "description": "",
+        "id": "sample-second-feature-to-test;two-sample-third-scenario;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 462400,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "This step will always pass",
+            "match": {
+              "location": "stepdefinitions.MyStepDefs.thisStepWillAlwaysPass()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "This step will \"pass\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"pass\"",
+                  "offset": 15
+                }
+              ],
+              "location": "stepdefinitions.MyStepDefs.thisStepWill(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: expected [true] but found [false]\r\n\tat org.testng.Assert.fail(Assert.java:111)\r\n\tat org.testng.Assert.failNotEquals(Assert.java:1590)\r\n\tat org.testng.Assert.assertTrue(Assert.java:57)\r\n\tat org.testng.Assert.assertTrue(Assert.java:67)\r\n\tat stepdefinitions.MyStepDefs.thisStepWill(MyStepDefs.java:39)\r\n\tat ✽.This step will \"fail\"(file:///D:/IntelliJ/Automation/Selenium/cucumber-selenium-testng/src/test/resources/features/sample_two.feature:37)\r\n",
+              "duration": 425000,
+              "status": "failed"
+            },
+            "line": 37,
+            "name": "This step will \"fail\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"fail\"",
+                  "offset": 15
+                }
+              ],
+              "location": "stepdefinitions.MyStepDefs.thisStepWill(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 38,
+            "name": "This step will \"pass\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"pass\"",
+                  "offset": 15
+                }
+              ],
+              "location": "stepdefinitions.MyStepDefs.thisStepWill(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@second"
+          },
+          {
+            "name": "@fail"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-09-26T05:26:01.162Z",
+        "line": 53,
+        "name": "Two Sample fourth scenario",
+        "description": "",
+        "id": "sample-second-feature-to-test;two-sample-fourth-scenario;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 46,
+            "name": "This step will always pass",
+            "match": {
+              "location": "stepdefinitions.MyStepDefs.thisStepWillAlwaysPass()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: expected [true] but found [false]\r\n\tat org.testng.Assert.fail(Assert.java:111)\r\n\tat org.testng.Assert.failNotEquals(Assert.java:1590)\r\n\tat org.testng.Assert.assertTrue(Assert.java:57)\r\n\tat org.testng.Assert.assertTrue(Assert.java:67)\r\n\tat stepdefinitions.MyStepDefs.thisStepWill(MyStepDefs.java:39)\r\n\tat ✽.This step will \"fail\"(file:///D:/IntelliJ/Automation/Selenium/cucumber-selenium-testng/src/test/resources/features/sample_two.feature:47)\r\n",
+              "status": "failed"
+            },
+            "line": 47,
+            "name": "This step will \"fail\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"fail\"",
+                  "offset": 15
+                }
+              ],
+              "location": "stepdefinitions.MyStepDefs.thisStepWill(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 48,
+            "name": "This step will \"fail\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"fail\"",
+                  "offset": 15
+                }
+              ],
+              "location": "stepdefinitions.MyStepDefs.thisStepWill(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 49,
+            "name": "This step will \"fail\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"fail\"",
+                  "offset": 15
+                }
+              ],
+              "location": "stepdefinitions.MyStepDefs.thisStepWill(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@second"
+          },
+          {
+            "name": "@fail"
+          }
+        ]
+      }
+    ],
+    "name": "Sample Second Feature to Test",
+    "description": "",
+    "id": "sample-second-feature-to-test",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/sample_two.feature",
+    "tags": [
+      {
+        "name": "@second",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]
