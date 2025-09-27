@@ -11,6 +11,8 @@ public class Scenario {
     private String status;
     private long duration;
     private List<Step> steps;
+    private List<Hook> beforeHooks;
+    private List<Hook> afterHooks;
 
     // Getters and Setters
     public String getId() {
@@ -75,5 +77,21 @@ public class Scenario {
 
     public void setScenario(String scenario) {
         this.scenario = scenario;
+    }
+
+    public List<Hook> getBeforeHooks() {
+        return beforeHooks;
+    }
+
+    public void setBeforeHooks(List<Hook> beforeHooks) {
+        this.beforeHooks = beforeHooks;
+    }
+
+    public List<Hook> getAfterHooks() {
+        return afterHooks;
+    }
+
+    public void setAfterHooks(List<Hook> afterHooks) {
+        this.afterHooks = afterHooks;
     }
 }
