@@ -3,12 +3,10 @@ package reportgenerator.service;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import reportgenerator.model.Feature;
-import reportgenerator.model.Scenario;
-import reportgenerator.model.Step;
-import reportgenerator.model.Hook;
+import reportgenerator.model.*;
 
 import java.io.File;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -27,6 +25,8 @@ public class ReportService {
         int totalFeatures = 0, passedFeatures = 0, failedFeatures = 0;
         int totalScenarios = 0, passedScenarios = 0, failedScenarios = 0;
         int totalSteps = 0, passedSteps = 0, failedSteps = 0, skippedSteps = 0;
+
+        long totalDuration = 0L; // track execution time in ns
 
         for (Map<String, Object> f : cucumberData) {
             Feature feature = new Feature();
@@ -62,6 +62,7 @@ public class ReportService {
                             for (Map<String, Object> s : stepsList) {
                                 Step step = parseStep(s);
                                 backgroundSteps.add(step);
+                                totalDuration += step.getDuration();
                             }
                         }
                         break;
@@ -99,19 +100,21 @@ public class ReportService {
                         List<Hook> beforeHooks = parseHooks((List<Map<String, Object>>) e.get("before"));
                         scenario.setBeforeHooks(beforeHooks);
                         for (Hook hook : beforeHooks) {
+                            totalDuration += hook.getDuration();
                             if ("failed".equals(hook.getStatus())) {
                                 scenarioStatus = "failed";
                                 featureFailed = true;
-                            } ;
+                            }
                         }
                     }
 
-                    // ✅ Add background steps (shared)
+                    // ✅ Add background steps
                     for (Step bg : backgroundSteps) {
                         Step copy = copyStep(bg);
                         scenario.getSteps().add(copy);
                         totalSteps++;
                         scenario.setDuration(scenario.getDuration() + copy.getDuration());
+                        totalDuration += copy.getDuration();
 
                         if ("failed".equals(copy.getStatus())) {
                             scenarioStatus = "failed";
@@ -148,6 +151,7 @@ public class ReportService {
                             scenario.getSteps().add(step);
                             totalSteps++;
                             scenario.setDuration(scenario.getDuration() + step.getDuration());
+                            totalDuration += step.getDuration();
                         }
                     }
 
@@ -156,10 +160,11 @@ public class ReportService {
                         List<Hook> afterHooks = parseHooks((List<Map<String, Object>>) e.get("after"));
                         scenario.setAfterHooks(afterHooks);
                         for (Hook hook : afterHooks) {
+                            totalDuration += hook.getDuration();
                             if ("failed".equals(hook.getStatus())) {
                                 scenarioStatus = "failed";
                                 featureFailed = true;
-                            } ;
+                            }
                         }
                     }
 
@@ -184,17 +189,17 @@ public class ReportService {
         report.set("features", mapper.valueToTree(features));
 
         ObjectNode summary = mapper.createObjectNode();
-        ObjectNode fSummary = mapper.createObjectNode();
+        ObjectNode fSummary = new ObjectNode(mapper.getNodeFactory());
         fSummary.put("total", totalFeatures);
         fSummary.put("passed", passedFeatures);
         fSummary.put("failed", failedFeatures);
 
-        ObjectNode sSummary = mapper.createObjectNode();
+        ObjectNode sSummary = new ObjectNode(mapper.getNodeFactory());
         sSummary.put("total", totalScenarios);
         sSummary.put("passed", passedScenarios);
         sSummary.put("failed", failedScenarios);
 
-        ObjectNode stepSummary = mapper.createObjectNode();
+        ObjectNode stepSummary = new ObjectNode(mapper.getNodeFactory());
         stepSummary.put("total", totalSteps);
         stepSummary.put("passed", passedSteps);
         stepSummary.put("failed", failedSteps);
@@ -206,6 +211,23 @@ public class ReportService {
 
         report.set("summary", summary);
 
+        // ===== Metadata Handling =====
+        Metadata metadata = new Metadata();
+        metadata.setRunBy(System.getProperty("user.name"));
+        metadata.setSystem(System.getProperty("os.name") + " v" + System.getProperty("os.version"));
+        metadata.setBrowser("chrome"); // default
+
+        long durationMs = totalDuration / 1_000_000; // ns → ms
+        Instant endInstant = Instant.now();
+        Instant startInstant = endInstant.minusMillis(durationMs);
+
+        metadata.setStartTime(startInstant.toString());
+        metadata.setEndTime(endInstant.toString());
+        metadata.setDuration(durationMs);
+
+        report.set("metadata", mapper.valueToTree(metadata));
+
+        // Write report.json
         mapper.writerWithDefaultPrettyPrinter().writeValue(new File(reportJsonPath), report);
     }
 
