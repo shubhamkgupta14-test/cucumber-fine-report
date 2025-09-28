@@ -99,7 +99,10 @@ public class ReportService {
                         List<Hook> beforeHooks = parseHooks((List<Map<String, Object>>) e.get("before"));
                         scenario.setBeforeHooks(beforeHooks);
                         for (Hook hook : beforeHooks) {
-                            if ("failed".equals(hook.getStatus())) scenarioStatus = "failed";
+                            if ("failed".equals(hook.getStatus())) {
+                                scenarioStatus = "failed";
+                                featureFailed = true;
+                            } ;
                         }
                     }
 
@@ -153,7 +156,10 @@ public class ReportService {
                         List<Hook> afterHooks = parseHooks((List<Map<String, Object>>) e.get("after"));
                         scenario.setAfterHooks(afterHooks);
                         for (Hook hook : afterHooks) {
-                            if ("failed".equals(hook.getStatus())) scenarioStatus = "failed";
+                            if ("failed".equals(hook.getStatus())) {
+                                scenarioStatus = "failed";
+                                featureFailed = true;
+                            } ;
                         }
                     }
 
